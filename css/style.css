@@ -1,0 +1,458 @@
+/*font-family: 'Open Sans', sans-serif;
+font-family: 'Oxygen', sans-serif;*/
+
+#navbar-topo{
+	
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#navbar-topo .navbar-brand{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+ }
+
+#pesquisar{
+	width: 60.75%;
+	margin-left: 30px;
+}
+
+#pesquisar input{
+	width: 80% !important;
+	border-radius: 0;
+	height: 45px !important;
+    margin-left: 20px;
+}
+
+#pesquisar input{
+    color: black
+}
+
+#pesquisar button{
+	border: white;
+	width: 45px;
+	height: 45px !important;
+}
+
+
+#pesquisar ::placeholder {
+  color: black;
+  font-size: 1.0em;
+  padding-left: 5px;
+  font-family: Arial,sans-serif;
+  opacity: 0.7;
+}
+
+.fa-user-circle-o {
+	color:#fff;
+}
+
+/*Modal*/
+.card-container.card {
+    max-width: 350px;
+    padding: 40px 40px;
+}
+
+.btn {
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/*
+ * Card component
+ */
+.card {
+    background-color: #F7F7F7;
+    /* just in case there no content*/
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+ 
+
+.fa-heart-o {
+    color:#fff;
+    
+}
+
+.fa-shopping-cart {
+	color:#fff;
+    padding-top: 8px;
+}
+
+#navbar-menu{
+	height: 40px;
+    border:white;
+    margin-top: 132px;
+
+}
+/*efeito dos botões menu-empresa*/
+#menu-empresa ul {
+    margin:0;
+    padding:0;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display:flex;
+}
+#menu-empresa ul li {
+    list-style:none;
+}
+#menu-empresa ul li a {
+    color:#fff;
+    font-size:20px;
+    text-transform:uppercase;
+    display:block;
+    position:relative;
+    width:120px;
+    height:60px;
+    background:#262626;
+    text-align:center;
+    line-height:60px;
+}
+#menu-empresa ul li a:before {
+    content:attr(data-text);
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    text-align:center;
+    line-height:60px;
+    background:#7b10ca;
+    color:#fff;
+    transition:.3s;
+    transform-origin:bottom;
+    transform:rotateX(90deg) translateY(30px);
+}
+#menu-empresa ul li a:hover:before {
+    transform:rotateX(0deg) translateY(0px);    
+}
+#menu-empresa ul li a:after {
+    content:attr(data-text);
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    text-align:center;
+    line-height:60px;
+    background:#262626;
+    color:#fff;
+    transition:.3s;
+    transform-origin:top;
+    transform:rotateX(0deg) translateY(0px);
+}
+#menu-empresa ul li a:hover:after {
+    transform:rotateX(90deg) translateY(-30px);    
+}
+
+
+
+.btn-group button{
+	padding-top: 10px;
+}
+
+.btn-group button{
+	width: 145px;
+	height: 35px;
+}
+
+
+#dropdown_navbar-menu{
+	position: absolute;
+    transform: translate3d(0px, 35px, 0px);
+    top: 0px;
+    left: 0px;
+    width: 198.3px;
+    will-change: transform;
+}
+
+#navbar-menu .dropdown:rover{
+    background-color: black;
+}
+
+
+button.btn-success{
+	margin-left: 26px;
+    
+}
+
+img .d-block{
+	width: 1060px;
+}
+
+.title-arch {
+		text-align: center;
+		margin: 50px 0;
+		font-size: 22px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+
+.project {
+	width: 100%;
+	height: 500px;
+	background-image: url(https://image.freepik.com/free-vector/abstract-geometric-background-design_1045-764.jpg);
+	background-size: cover;
+	background-position: center;
+	padding: 0 !important;
+	float:left;
+}
+
+.project-2 {
+	background-image: url(https://image.freepik.com/free-vector/abstract-geometric-background-design_1045-764.jpg);
+}
+
+.project-3 {
+	background-image: url(https://image.freepik.com/free-vector/abstract-geometric-background-design_1045-764.jpg);
+}
+
+.project-4 {
+	background-image: url(https://image.freepik.com/free-vector/abstract-geometric-background-design_1045-764.jpg);
+}
+
+.project-hover {
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	opacity: 0;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	background-color: rgba(186, 232, 2, 0.7);
+	padding: 40% 30px !important;
+}
+
+.project-hover hr {
+	height: 30px;
+	width: 0;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	background-color: rgba(255, 255, 255, 1);
+	border: 0;
+}
+
+.project-hover a {
+	color: rgba(255, 255, 255, 1);
+	padding: 2px 22px;
+	line-height: 40px;
+	border: 2px solid rgba(255, 255, 255, 1);
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.project-hover a:hover {
+	border-color: rgba(51, 51, 51, 1);
+	color: rgba(51, 51, 51, 1);
+	background-color: #FFF;
+}
+
+.project:hover .project-hover {
+	opacity: 1;
+}
+
+.project:hover .project-hover hr {
+	width: 100%;
+	height: 5px;
+}
+
+
+
+
+
+
+
+/*rodape*/
+
+footer {
+    background-color: rgba(44, 62, 80, 1.0);
+
+    width: 100%;
+    bottom: 0;
+    font-weight: lighter;
+    color: white;
+    margin-top: 50px;
+}
+.footerHeader{
+    width:100%;
+    padding:1em;
+    background-color:rgba(52, 73, 94,1.0);
+    text-align:center;
+    color:white;
+    padding-top: 30px;
+    margin-bottom: 30px; 
+}
+
+#rodape .row{
+    padding-top: 20px;
+}
+
+
+footer h3{
+    font-weight:lighter;
+}
+footer ul{
+    padding-left:5px;
+    list-style:none;
+}
+footer p{
+    text-align : justify;
+    font-size : 12px;
+}
+footer iframe {
+    width:100%;
+    position:relative;
+    height:170px;
+}
+
+.sm{
+    list-style:none;
+    overflow:auto;
+}
+.sm li {
+    display: inline;
+    padding:5px;
+    float:left;
+} 
+.sm li a img {
+    width:32px;
+}
+
+
+/*form*/
+
+#cadastro{
+    padding-top: 60px;
+}
+.panel-login  {
+    border-color: green !important;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+}
+.panel-login>.panel-heading {
+    color: #00415d;
+    background-color: #fff;
+    border-color: #fff;
+    text-align:center;
+    margin-top: 10px;
+}
+.panel-login>.panel-heading a{
+    text-decoration: none;
+    color: #666;
+    font-weight: bold;
+    font-size: 15px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+.panel-login>.panel-heading a.active{
+    color: #029f5b;
+    font-size: 18px;
+}
+.panel-login>.panel-heading hr{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    clear: both;
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0));
+    background-image: -moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+    background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+    background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+}
+.panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
+    height: 45px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+.panel-login input:hover,
+.panel-login input:focus {
+    outline:none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-color: #ccc;
+}
+.btn-login {
+    background-color: #59B2E0;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    height: auto;
+    font-weight: normal;
+    padding: 14px 0;
+    text-transform: uppercase;
+    border-color: #59B2E6;
+}
+.btn-login:hover,
+.btn-login:focus {
+    color: #fff;
+    background-color: #53A3CD;
+    border-color: #53A3CD;
+}
+.forgot-password {
+    text-decoration: underline;
+    color: #888;
+}
+.forgot-password:hover,
+.forgot-password:focus {
+    text-decoration: underline;
+    color: #666;
+}
+
+.btn-register {
+    background-color: #1CB94E;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    height: auto;
+    font-weight: normal;
+    padding: 14px 0;
+    text-transform: uppercase;
+    border-color: #1CB94A;
+}
+.btn-register:hover,
+.btn-register:focus {
+    color: #fff;
+    background-color: #1CA347;
+    border-color: #1CA347;
+}
+
+
+
