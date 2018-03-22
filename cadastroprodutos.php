@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class=''>
+          <!DOCTYPE html>
 <head>
  <title></title>
   
@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css3/responsivo.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oxygen" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -23,51 +23,42 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
 
 </head>
-
-  <body id="cadastro">
-
-  <div class="container">
-      <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
-        <div class="panel panel-login">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-6">
-                <a href="#" class="active" id="login-form-link">Login</a>
-              </div>
-              <div class="col-xs-6">
-                <a href="registro.php" id="register-form-link">Register</a>
+  <body>
+        <div class="container">
+          <div class="panel-body" style="padding-top: 15%; text-align: center;">
+            <div class="panel-heading">
+              <div class="row">
+              <div class="col-xl-12">
+                <h5><a href="login.php" id="register-form-link" style="font-family: verdana;">Cadastro de produtos</a></h5>
               </div>
             </div>
-            <hr>
-          </div>
-          <div class="panel-body">
             <div class="row">
               <div class="col-lg-12">
-                <form id="login-form" action="login-resposta.php" method="post" role="form" style="display: block;">
+                <form id="login-form" action="respostaProdutos.php" method="post" role="form">
                   <div class="form-group">
-                    <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Username" value="" required>
+                    Título <input type="text" name="titulo" id="titulo" tabindex="1" class="form-control" placeholder="Ex:maria@gmail.com" value="">
                   </div>
                   <div class="form-group">
-                    <input type="password" name="senha" id="senha" tabindex="2" class="form-control" placeholder="Password" required>
+                    Categoria <input type="text" name="categoria" id="categoria" tabindex="2" class="form-control" placeholder="Categoria do produto">
                   </div>
-                  <div class="form-group text-center">
-                    <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-                    <label for="remember"> Remember Me</label>
+                  <div class="form-group">
+                    Valor <input type="text" name="valor" id="valor" tabindex="2" class="form-control" placeholder="Insira o valor do produto">
                   </div>
+                  <div class="form-group">
+                   <input type="file" name="foto" id="foto">
+                  </div>
+                       
+           </fieldset>
+                  
                   <div class="form-group">
                     <div class="row">
                       <div class="col-sm-6 col-sm-offset-3">
-                        <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                        <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Cadastrar produto">
+
+
+
                       </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <div class="text-center">
-                          <a href="https://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
-                        </div>
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -75,18 +66,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
- 
 
- <?php
-   include "rodape.php";
- ?>
- 
-</body>
-</html>
-          
-
-
+          </body>
+          </html>

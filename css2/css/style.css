@@ -9,48 +9,32 @@ font-family: 'Oxygen', sans-serif;*/
     width: 100%;
 }
 
-#navbar-topo .row{
-    width: 100% ;
-    margin-left: 0%;
-}
-
 #navbar-topo .navbar-brand{
+    box-sizing: border-box;
+    margin: 0;
     padding: 0;
-    padding-left: 7%;
-    width: 100% !important;
  }
 
 #pesquisar{
-    width: 100% !important;
-    padding-left: 2.5%;
+	width: 60.75%;
+	margin-left: 30px;
 }
 
 #pesquisar input{
-    width: 90% !important;
-    padding-left: 2%;
-    border-radius: 0;
-    height: 45px !important;
-    
-}
-
-.col-xl-7 #pesquisar{
-    padding-top: 23px;
+	width: 80% !important;
+	border-radius: 0;
+	height: 45px !important;
+    margin-left: 20px;
 }
 
 #pesquisar input{
-    color: black;
+    color: black
 }
 
 #pesquisar button{
-    border: white;
-    width: 45px;
-    height: 45px !important;
-}
-
-.col-sm-7  button{
-    border: white;
-    width: 45px;
-    height: 45px !important;
+	border: white;
+	width: 45px;
+	height: 45px !important;
 }
 
 
@@ -63,20 +47,62 @@ font-family: 'Oxygen', sans-serif;*/
 }
 
 .fa-user-circle-o {
-    color:#fff;
-     padding-top: 27px;
+	color:#fff;
 }
 
+/*Modal*/
+.card-container.card {
+    max-width: 350px;
+    padding: 40px 40px;
+}
+
+.btn {
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/*
+ * Card component
+ */
+.card {
+    background-color: #F7F7F7;
+    /* just in case there no content*/
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+ 
 
 .fa-heart-o {
     color:#fff;
-    padding-top: 28px;
 }
 
 .fa-shopping-cart {
-    color:#fff;
-    padding-top: 35px;
-    padding-left: 10px;
+	color:#fff;
+    padding-top: 8px;
+    padding-left: 32px;
 }
 
 #navbar-menu{
@@ -85,6 +111,69 @@ font-family: 'Oxygen', sans-serif;*/
     margin-top: 132px;
 
 }
+/*efeito dos botões menu-empresa*/
+#menu-empresa ul {
+    margin:0;
+    padding:0;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display:flex;
+}
+#menu-empresa ul li {
+    list-style:none;
+}
+#menu-empresa ul li a {
+    color:#fff;
+    font-size:20px;
+    text-transform:uppercase;
+    display:block;
+    position:relative;
+    width:120px;
+    height:60px;
+    background:#262626;
+    text-align:center;
+    line-height:60px;
+}
+#menu-empresa ul li a:before {
+    content:attr(data-text);
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    text-align:center;
+    line-height:60px;
+    background:#7b10ca;
+    color:#fff;
+    transition:.3s;
+    transform-origin:bottom;
+    transform:rotateX(90deg) translateY(30px);
+}
+#menu-empresa ul li a:hover:before {
+    transform:rotateX(0deg) translateY(0px);    
+}
+#menu-empresa ul li a:after {
+    content:attr(data-text);
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    text-align:center;
+    line-height:60px;
+    background:#262626;
+    color:#fff;
+    transition:.3s;
+    transform-origin:top;
+    transform:rotateX(0deg) translateY(0px);
+}
+#menu-empresa ul li a:hover:after {
+    transform:rotateX(90deg) translateY(-30px);    
+}
+
+
 
 .btn-group button{
 	padding-top: 10px;
@@ -128,27 +217,25 @@ img .d-block{
 	}
 
 .project {
-    width: 100%;
-    height: 300px;
-    background-image: url(../img/motoG-5s-plus4.png);
-    background-size: cover;
-    background-position: center;
-    padding: 0 !important;
-    float:left;
-    border: 1px ridge ;
+	width: 100%;
+	height: 500px;
+	background-image: url(../img/motoG-5s-plus.png);
+	background-size: cover;
+	background-position: center;
+	padding: 0 !important;
+	float:left;
 }
 
-
 .project-2 {
-	background-image: url(../img/smart-tv-552.png);
+	background-image: url(https://image.freepik.com/free-vector/abstract-geometric-background-design_1045-764.jpg);
 }
 
 .project-3 {
-	background-image: url(../img/Computador-DualCore2.jpg);
+	background-image: url(https://image.freepik.com/free-vector/abstract-geometric-background-design_1045-764.jpg);
 }
 
 .project-4 {
-	background-image: url(../img/tenis-Ollie.webp);
+	background-image: url(https://image.freepik.com/free-vector/abstract-geometric-background-design_1045-764.jpg);
 }
 
 .project-hover {

@@ -1,0 +1,21 @@
+<?php 
+    include "banco.php";
+
+    if(empty($_POST['pesquisa'])){
+      $query = "select * from produto";     
+    }else{
+      $p = $_POST['pesquisa'];
+      $query = "select * from produto where titulo like '%$p%' or descricao like '%$p%' ";
+    }
+
+     $consulta = mysqli_query($con, $query);
+    echo "<div class='container'>";
+    echo "<div class='row'>";
+    while($p = mysqli_fetch_array($consulta)){
+      $id = $p['idproduto'];
+      $titulo = $p['titulo'];
+      $valor = $p['valor'];
+      $descricao = $p['descricao'];
+      $valor = number_format($valor, 2, ',','.');
+      echo "";}
+      ?>

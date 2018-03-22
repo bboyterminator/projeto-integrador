@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css3/responsivo.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oxygen" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -24,12 +24,14 @@
 
 </head>
 
-  <body id="cadastro">
 
+
+  <body id="cadastro">
+    
 
     <div class="container">
       <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+      <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
         <div class="panel panel-login">
           <div class="panel-heading">
             <div class="row">

@@ -12,7 +12,7 @@
 
 	if($total == 1){
 		if(isset($_POST['remember'])){
-			setcookie("email", $email, time()+60*2 );
+			setcookie("email", $email, time()+60*5 );
 		}else{
 			session_start();
 			$_SESSION['email'] = $email;

@@ -14,7 +14,7 @@
 	}
 
 	include "banco.php";
-	$query = "select from usuario where email = '$email'";
+	$query = "select * from usuario where email = '$email'";
 	$consulta = mysqli_query($con, $query);
 
 	while($u = mysqli_fetch_array($consulta)){

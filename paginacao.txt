@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form method="get">
+		Quantos produtos por vez?
+		<select name="exibir">
+			<?php 
+				include "banco.php";
+				if(empty($_GET['exibir'])){
+					$exibir = 3;			
+				}else{
+					$exibir = $_GET['exibir'];
+				}
+				
+			?>
+
+			<option value="1" <?php if($exibir == 1){ echo "selected";} ?>>1</option>
+			<option value="2" <?php if($exibir == 2){ echo "selected";} ?>>2</option>
+			<option value="5" <?php if($exibir == 5){ echo "selected";} ?>>5</option>
+			<option value="10" <?php if($exibir == 10){ echo "selected";} ?>>10</option>
+		</select>
+		<button type="submit">Ir</button>
+	</form>
+	<?php 
+
+		if(empty($_GET['pi'])){
+			$inicial = 0;			
+		}else{
+			$inicial = $_GET['pi'];
+		}
+		$query2 = "select * from produto";
+		$consulta2 = mysqli_query($con, $query2);
+		$total = mysqli_num_rows($consulta2);
+
+		$query = "select * from produto limit $inicial,$exibir";
+		$consulta = mysqli_query($con, $query);
+
+		$paginas = ceil($total / $exibir);
+
+
+		while($p = mysqli_fetch_array($consulta)){
+			$idproduto = $p['idproduto'];
+			$titulo = utf8_encode($p['titulo']);
+			$valor = $p['valor'];
+
+			echo "	<div>
+						<h1>$titulo</h1>
+						<p>Valor: $valor</p>
+						<hr /> 
+					</div>
+				 ";
+		}
+		echo "<a href='teste.php?pi=0&exibir=$exibir'>Primeiro</a>";
+		for($i = 1; $i <= $paginas; $i++){
+			if($i == 1){
+				$pi = 0;
+			}else{
+				$pi = $pi + $exibir;
+			}
+			echo "<a href='teste.php?pi=$pi&exibir=$exibir'>$i</a>";
+		}
+		echo "<a href='teste.php?pi=$pi&exibir=$exibir'>ultimo</a>";
+	?>
+</body>
+</html>
+
+
+
+===============================================
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+	<form method="get">
+		Quantos produtos por vez?
+		<select name="exibir">
+			<?php 
+				include "banco.php";
+				if(empty($_GET['exibir'])){
+					$exibir = 3;			
+				}else{
+					$exibir = $_GET['exibir'];
+				}
+				
+			?>
+
+			<option value="1" <?php if($exibir == 1){ echo "selected";} ?>>1</option>
+			<option value="2" <?php if($exibir == 2){ echo "selected";} ?>>2</option>
+			<option value="5" <?php if($exibir == 5){ echo "selected";} ?>>5</option>
+			<option value="10" <?php if($exibir == 10){ echo "selected";} ?>>10</option>
+		</select>
+		<button type="submit">Ir</button>
+	</form>
+	<?php 
+
+		if(empty($_GET['pi'])){
+			$inicial = 0;			
+		}else{
+			$inicial = $_GET['pi'];
+		}
+		$query2 = "select * from produto";
+		$consulta2 = mysqli_query($con, $query2);
+		$total = mysqli_num_rows($consulta2);
+
+		$query = "select * from produto limit $inicial,$exibir";
+		$consulta = mysqli_query($con, $query);
+
+		$paginas = ceil($total / $exibir);
+
+
+		while($p = mysqli_fetch_array($consulta)){
+			$idproduto = $p['idproduto'];
+			$titulo = utf8_encode($p['titulo']);
+			$valor = $p['valor'];
+
+			echo "	<div>
+						<h1>$titulo</h1>
+						<p>Valor: $valor</p>
+						<hr /> 
+					</div>
+				 ";
+		}
+		echo "<a class='btn btn-primary' href='teste.php?pi=0&exibir=$exibir'>Primeiro</a>";
+		for($i = 1; $i <= $paginas; $i++){
+			if($i == 1){
+				$pi = 0;
+			}else{
+				$pi = $pi + $exibir;
+			}
+			echo "<a class='btn btn-primary' href='teste.php?pi=$pi&exibir=$exibir'>$i</a>";
+		}
+		echo "<a class='btn btn-primary' href='teste.php?pi=$pi&exibir=$exibir'>ultimo</a>";
+	?>
+	 < src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></>
+    < src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></>
+    < src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></>
+</body>
+</html>
+
+
+
+=================================================================================
+
+Pesquisa like:
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<?php 
+		include "banco.php";
+		$exibir = 10;
+		if(empty($_GET['pi'])){
+			$inicial = 0;			
+		}else{
+			$inicial = $_GET['pi'];
+		}
+		$query2 = "select * from produto";
+		$consulta2 = mysqli_query($con, $query2);
+		$total = mysqli_num_rows($consulta2);
+
+		$query = "select * from produto limit $inicial,$exibir";
+		$consulta = mysqli_query($con, $query);
+
+		$paginas = ceil($total / $exibir);
+
+
+		while($p = mysqli_fetch_array($consulta)){
+			$idproduto = $p['idproduto'];
+			$titulo = utf8_encode($p['titulo']);
+			$valor = $p['valor'];
+
+			echo "	<div>
+						<h1>$titulo</h1>
+						<p>Valor: $valor</p>
+						<hr /> 
+					</div>
+				 ";
+		}
+		echo "<a href='teste.php?pi=0'>Primeiro</a>";
+		for($i = 1; $i <= $paginas; $i++){
+			if($i == 1){
+				$pi = 0;
+			}else{
+				$pi = $pi + $exibir;
+			}
+			echo "<a href='teste.php?pi=$pi'>$i</a>";
+		}
+		echo "<a href='teste.php?pi=$pi'>ultimo</a>";
+	?>
+</body>
+</html>
+
+
+
+
+======================================================================
+
+Pesquisa like 2:
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+	<form method="post">
+		<input type="text" name="pesquisa" placeholder="Digite aqui nome, ou parte do nome do produto" /><button type="submit">Pesquisar</button>
+	</form>
+	<?php 
+		include "banco.php";
+
+		if(empty($_POST['pesquisa'])){
+			$query = "select * from produto";			
+		}else{
+			$p = $_POST['pesquisa'];
+			$query = "select * from produto where titulo like '%$p%' or descricao like '%$p%' ";
+		}
+
+
+		$consulta = mysqli_query($con, $query);
+		echo "<div class='container'>";
+		echo "<div class='row'>";
+		while($p = mysqli_fetch_array($consulta)){
+			$id = $p['idproduto'];
+			$titulo = $p['titulo'];
+			$valor = $p['valor'];
+			$descricao = $p['descricao'];
+			$valor = number_format($valor, 2, ',','.');
+			echo "
+				<div class='col-4'>
+					<div class='card border-primary'>
+						<div class='card-header bg-primary'>
+							<h1>$titulo</h1>
+						</div>
+						<div class='card-body'>
+							<p>$descricao</p>
+							<p>Valor R$ $valor</p>
+						</div>
+					</div>
+				</div>
+				 ";
+
+		}
+		echo "</div></div>";
+
+	?>
+	< src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></>
+    < src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></>
+    < src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></>
+</body>
+</html>
+
+
+
+
+

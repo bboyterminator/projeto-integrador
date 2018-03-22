@@ -2,7 +2,7 @@
 <html>
 <head>
   <title></title>
-  
+	
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,24 +24,29 @@
 </head>
 
 <body>
-  
- <?php 
-   include "nav-menuTopo.php";
- ?>
 
-   <div id="demo" class="carousel slide" data-ride="carousel">
-   
+  <?php
+    include "nav-menuTopo.php";
+  ?>
+  
+    <div id="demo" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
 
     <!-- The slideshow -->
-  <div class="carousel-inner">
+  <div class="carousel-inner" style="width: 100%;">
         <div class="carousel-item active">
           <img class="img-fluid" src="img/celulares3.jpg" alt="celulares">
         </div>
         <div class="carousel-item">
-          <img class="img-fluid" src="img/roupas.png" alt="roupas">
+          <img class="img-fluid" src="img/celulares3.jpg" alt="celulares">
         </div>
         <div class="carousel-item">
-          <img class="img-fluid" src="img/livros-edited.jpg" alt="livros">
+          <img class="img-fluid" src="img/celulares3.jpg" alt="celulares">
         </div>
         <div class="carousel-item">
           <img class="img-fluid" src="img/celulares3.jpg" alt="celulares">
@@ -59,13 +64,9 @@
     </a>
   </div> 
 
-
-<body>
-
-
   
   <div class="container-fluid">
-<div class="title-arch">As melhores promoções você encontra aqui.</p></div>
+<div class="title-arch">Our Project<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar ex pulvinar est laoreet ullamcorper.</p></div>
 
   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 project wow animated animated4 fadeInLeft">
         <div class="project-hover">
@@ -77,7 +78,7 @@
         </div>
     </div>
   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 project project-2 wow animated animated3 fadeInLeft">
-      <div class="project-hover" id="teste">
+      <div class="project-hover">
           <h2>TITLE</h2>
             <hr />
             <p>Smart TV LED 55" Philips 55PUG6102/78 UHD 4K com Conversor Digital 4 HDMI 2 USB Wi-Fi 60Hz.</p>

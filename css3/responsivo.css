@@ -14,11 +14,6 @@ font-family: 'Oxygen', sans-serif;*/
     margin-left: 0%;
 }
 
-#navbar-topo .navbar-brand{
-    padding: 0;
-    padding-left: 7%;
-    width: 100% !important;
- }
 
 #pesquisar{
     width: 100% !important;
@@ -79,19 +74,23 @@ font-family: 'Oxygen', sans-serif;*/
     padding-left: 10px;
 }
 
+
+
 #navbar-menu{
 	height: 40px;
     border:white;
-    margin-top: 132px;
+    margin-top: 131px;
+   
+}
 
+#navbar-menu .row{
+	width: 100% ;
+   
 }
 
 .btn-group button{
 	padding-top: 10px;
-}
-
-.btn-group button{
-	width: 145px;
+	width: 150px;
 	height: 35px;
 }
 
@@ -103,21 +102,9 @@ font-family: 'Oxygen', sans-serif;*/
     left: 0px;
     width: 198.3px;
     will-change: transform;
-}
-
-#navbar-menu .dropdown:rover{
-    background-color: black;
-}
+    }
 
 
-button.btn-success{
-	margin-left: 26px;
-    
-}
-
-img .d-block{
-	width: 1060px;
-}
 
 .title-arch {
 		text-align: center;
@@ -128,11 +115,10 @@ img .d-block{
 	}
 
 .project {
-    width: 100%;
-    height: 300px;
     background-image: url(../img/motoG-5s-plus4.png);
-    background-size: cover;
+    background-size: 100%;
     background-position: center;
+    background-repeat: no-repeat;
     padding: 0 !important;
     float:left;
     border: 1px ridge ;
@@ -160,7 +146,7 @@ img .d-block{
 	-moz-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
 	transition: all 0.5s ease;
-	background-color: rgba(186, 232, 2, 0.7);
+	background-color: rgba(66, 139, 202, 0.7);
 	padding: 40% 30px !important;
 }
 
@@ -367,5 +353,16 @@ footer iframe {
     border-color: #1CA347;
 }
 
+/*produtos*/
+
+ #produto{
+    margin-top: 10%;
+ }
 
 
+/*sobre*/
+
+#quemsoueu .col-md-4{
+    margin: 0 auto;
+    border: 1 solid #000;
+}

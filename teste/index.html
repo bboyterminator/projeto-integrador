@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <style>
+    #bola{
+	  margin:80%;
+	  margin-bottom:0px;
+	  margin-right:0px;
+	  width:20px;
+	  height:20px;
+	  border-radius:50%;
+	  background:#800;
+	}
+	#b {
+	  background:#008;
+	  margin-top:0px;
+	  float:right;
+	  -webkit-transition: width 2s; /* Safari */
+    transition: width 4s;
+	}
+  </style>
+  <script>
+  function move() {
+    var elem = document.getElementById("bola");
+    var width = 80;
+    var id = setInterval(frame, 30);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+        } else {
+            width--;
+            elem.style.margin = width + '%';
+        }
+    }
+}
+</script>
+</head>
+<body>
+
+<div id="bola"></div>
+<button onclick="move()">Click Me</button>
+</body>
+</html>
