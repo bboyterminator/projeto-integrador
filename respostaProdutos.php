@@ -3,7 +3,7 @@
 	$categoria = $_POST['categoria'];
 	$valor = $_POST['valor'];
 	
-	include "banco2.php";
+	include "banco.php";
 	$query = "insert into produto (titulo, categoria, valor)
 	values ('$titulo', '$categoria', '$valor')";
 

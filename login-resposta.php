@@ -10,15 +10,18 @@
 
 	$total = mysqli_num_rows($consulta);
 
-	if($total == 1){
-		if(isset($_POST['remember'])){
-			setcookie("email", $email, time()+60*5 );
+	if($total == 0){
+		echo "E-mail ou senha inválida!";
 		}else{
-			session_start();
-			$_SESSION['email'] = $email;
+			while ($f = mysqli_fetch_array($consulta)){
+			$adm = $f['adm'];
+			$_COOKIE['email'] = $email;
+			$_COOKIE['adm'] = $adm;
+			header("Location: perfil.php");
 		}
 		
 	}
+	
 
 ?>
 
@@ -29,13 +32,6 @@
 </head>
 <body>
 
-<?php
-	if($total == 0){
-		echo "Usuário ou senha inválidos";
-	}else{
-		header("Location: confere.php");
-	}
-?>
 
 </body>
 </html>

@@ -1,3 +1,13 @@
+ <?php
+   if(isset($_POST['pesquisa'])){
+    $pesquisa = 1;
+    $p = $_POST['pesquisa'];
+  }else{
+    $pesquisa = 0;
+  }
+
+  ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +38,7 @@
  <?php 
    include "nav-menuTopo.php";
  ?>
+ 
 
    <div id="demo" class="carousel slide" data-ride="carousel">
    
@@ -72,7 +83,7 @@
           <h2>TITLE</h2>
             
             <hr />
-            <p>Smartphone Motorola Moto G 5s Plus Dual Chip Android 7.1.1 Nougat Tela 5.5" Snapdragon 625 32GB 4G 13MP Câmera Dual Cam - Ouro rosa.</p>
+            <p><!--<?php echo $titulo ?>--></p>
             <a href="#">See Project</a>
         </div>
     </div>

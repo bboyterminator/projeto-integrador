@@ -30,7 +30,7 @@
  ?>
 
  <?php
-   include "banco2.php";
+   include "banco.php";
    $query = "select * from produto";
    $c = mysqli_query($con, $query);
    while($p = mysqli_fetch_array($c)){
