@@ -15,8 +15,8 @@
 		}else{
 			while ($f = mysqli_fetch_array($consulta)){
 			$adm = $f['adm'];
-			$_COOKIE['email'] = $email;
-			$_COOKIE['adm'] = $adm;
+			setcookie("email", $email, time()+60*5 );
+			setcookie("adm", $adm, time()+60*5 );
 			header("Location: perfil.php");
 		}
 		

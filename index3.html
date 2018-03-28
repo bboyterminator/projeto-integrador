@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		function myFunc(theObject){
+			theObject.make = "Toyota"
+		};
+
+		var mycar = {
+			make:"Honda",model:"Accord",year: 1998
+		};
+
+		console.log(mycar.make);
+
+		myFunc(mycar);
+
+		console.log(mycar.make);
+
+	</script>
+
+</body>
+</html>

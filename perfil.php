@@ -1,7 +1,7 @@
 <?php 
 
 	if (empty($_COOKIE['email'])) {
-		header("Location: index.php");
+	  header("Location: login.php");
 	}
 	$email = $_COOKIE['email'];
 	$adm = $_COOKIE['adm'];
@@ -15,21 +15,20 @@
 </head>
 <body>
 	Usuário: <?php echo $email; ?>
-	<ul>
-		<li><a href="func.php">Funcionários</a></li>
-
-		<?php 
+	<?php 
 			if ($adm == 'sim') {
-				?>
-
-				<?php
+				
+				header("Location: homeAdm.php");
+				}else{
+					include "index.php";
 				}
 			?> 
 
 
-		<li><a href="cadfunc.php">Cadastrar Funcionário</a></li>
 
-		<li><a href="sair.php">Funcionários</a></li>
+		
+
+		
 	</ul>
 </body>
 </html>

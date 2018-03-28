@@ -1,0 +1,132 @@
+index.php
+
+!DOCTYPE html
+html
+head
+	titletitle
+head
+body
+	form method=post action=resposta.php
+		div
+			labelEmaillabel
+			input type=text name=email
+		div
+		div
+			labelSenhalabel
+			input type=password name=senha
+		div
+		div
+			input type=checkbox name=pcPermanecer Conectado!
+		div
+		div
+			button type=submitEnviarbutton
+		div
+	form
+body
+html
+_______________________________________________________________________
+
+resposta.php
+<?php 
+	$email = $_POST['email'];
+	$senha = $_POST['senha'];
+
+
+
+	include "banco.php";
+
+	$query = "select * from usuario where email = '$email' and senha = '$senha' limit 1";
+
+	$consulta = mysqli_query($con, $query);
+
+	$total = mysqli_num_rows($consulta);
+
+	if($total == 1){
+		if(empty($_POST['pc'])){
+			session_start();
+			$_SESSION['email'] = $email;
+		}else{
+			setcookie("email", $email, time()+60*2 );
+		}
+
+		
+	}
+
+
+
+?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<?php 
+		if($total == 0){
+			echo "Email ou senha inválida!";
+		}else{
+			header("Location: confere.php");
+		}
+
+	?>
+</body>
+</html>
+
+
+________________________________________________________________
+confere.php
+
+
+php 
+	
+	session_start();
+	if(isset($_COOKIE['email']) or isset($_SESSION['email'])){
+		if(isset($_SESSION['email'])){
+			$email = $_SESSION['email'];
+		}
+		if(isset($_COOKIE['email'])){
+			$email = $_COOKIE['email'];
+		}
+	}else{
+		header(Location index.php);
+	}
+
+
+	include banco.php;
+	$query = select  from usuario where email = '$email';
+	$consulta = mysqli_query($con, $query);
+	
+	while($u = mysqli_fetch_array($consulta)){
+		$nome = $u['nome'];
+	}
+
+
+
+	echo $nome conectado!;
+
+
+
+a href=sair.phpClique aqui a para sair.
+
+
+_____________________________________________________________
+
+
+sair.php
+php 
+	setcookie(email, , time()-1);
+	session_start();
+	session_destroy();
+
+	header(Location index.php);
+
+ 
+
+
+___________________________________________________________
+banco.php
+
+php 
+	$con = mysqli_connect(localhost, root, , teste);
