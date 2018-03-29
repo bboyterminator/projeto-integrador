@@ -77,8 +77,6 @@
 
 <body>
 
-
-
   <?php 
       // conexão com banco de dados
       $con = mysqli_connect("localhost", "root", "", "brexome");
@@ -105,13 +103,12 @@
         $categoria = $f['categoria'];
         $valor = $f['valor'];
         $valor = number_format($valor, 2, ',','.');
-        $img = $f['img'];
         
     ?>
 
 
   
- <div class="container-fluid">
+  <div class="container-fluid">
 <div class="title-arch">As melhores promoções você encontra aqui.</p></div>
 
   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 project wow animated animated4 fadeInLeft">
@@ -120,16 +117,13 @@
             
             <hr />
             <p><?php echo $titulo ?></p>
-            <a href="carrinho.php?idprodutos=<?php echo $idprodutos; ?>" class="bg-transparent" style="border: transparent;"><button class="btn btn-primary"><?php echo  $valor?></button></a>
+            <button class="btn btn-primary"><?php echo 'R$ $valor' ?></button>
         </div>
     </div>
 
-  </div>
-
-
       
     <div class="clearfix"></div>
-
+</div>
 <?php 
             }
           ?>

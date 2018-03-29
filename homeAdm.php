@@ -38,7 +38,7 @@
 <body>
   
  <?php 
-   include "nav-menuTopoAdm.php";
+   include "nav-menuTopo.php";
  ?>
 
  

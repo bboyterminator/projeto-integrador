@@ -18,7 +18,7 @@
 	<?php 
 			if ($adm == 'sim') {
 				
-				header("Location: homeAdm.php");
+				include "homeAdm.php";
 				}else{
 					include "index.php";
 				}
