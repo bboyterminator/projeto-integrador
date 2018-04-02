@@ -1,0 +1,41 @@
+<?php 
+  if(empty($_GET['id'])){
+    header("Location:index.php");
+  }else{
+    $id = $_GET['id'];
+  }
+  $id = base64_decode($id);
+
+  include "banco.php";
+
+  $query = "select * from produto where idproduto = $id limit 1";
+  $consulta = mysqli_query($con, $query);
+
+  if($p = mysqli_fetch_assoc($consulta)){
+    $titulo = $p['titulo'];
+    $descricao = $p['descricao'];
+    $valor = $p['valor'];
+    $valor2 = $p['valor'];
+    $valor = number_format($valor, 2, ',','.');
+    $img = $p['img'];
+  }
+?>
+  <h1><?php echo $titulo; ?></h1>
+  <img src="imgproduto/<?php echo $img; ?>" style="width: 300px;" />
+  <div>
+    <p><?php echo $descricao; ?></p>
+    <p>R$ <?php echo $valor; ?></p>
+    <?php 
+      echo "<select>";
+      for($p = 1;$p<=12;$p++){
+        $val = $valor2/$p;
+        $val = number_format($val, 2, ',','.');
+        echo "<option>$p x de R$ $val</option>";
+        if($p >= 10){
+          $valor2 = $valor2 * 1.05;
+        }
+      }
+      echo "</select>";
+    ?>
+  </div>
+  <a href="carrinho.php?idproduto=<?php echo $id; ?>">Adicionar ao carrinho</a>

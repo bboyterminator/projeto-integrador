@@ -16,12 +16,7 @@
 <body>
 	Usuário: <?php echo $email; ?>
 	<?php 
-			if ($adm == 'sim') {
-				
-				include "homeAdm.php";
-				}else{
-					include "index.php";
-				}
+			header("Location: index.php");
 			?> 
 
 

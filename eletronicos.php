@@ -1,3 +1,9 @@
+
+<?php
+
+  $admu = $_COOKIE['adm'];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,25 +36,26 @@
  ?>
 
  <?php
-   include "banco.php";
-   $query = "select * from produto";
-   $c = mysqli_query($con, $query);
-   while($p = mysqli_fetch_array($c)){
-    $idprodutos = $p['idprodutos'];
-    $titulo = $p['titulo'];
-    $valor = $p['valor'];
-    $valor = number_format($valor, 2, ',','.');
-  }
 
- 
- ?>
+   include "banco.php";
+   $query = "select * from produto where categoria = 'Eletronicos'";
+   $c = mysqli_query($con, $query);
+   if($f = mysqli_fetch_assoc($c)){
+     $idprodutos = $f['idprodutos'];
+     $titulo = $f['titulo'];
+     $categoria = $f['categoria'];
+     $valor = $f['valor'];
+     $valor = number_format($valor, 2, ',','.');
+     $img = $f['img'];
+        }
+    ?>
 
  <div class="container" id="produto">
    <div class="row">
      <div class="col-xl-5">
-       <img src="img/motoG-5s-plus.png">
+       <img src="imgproduto/<?php echo $img; ?>" style="width: 500px; height: 500px;">
      </div>
-     <div class="col-xl-7">
+     <div class="col-xl-7" style="padding-left: 10%;">
        <div class="row">
          <h2><?php echo "$titulo"; ?></h2>
          <p>(Código xxxxxxxx)</p>
@@ -66,14 +73,37 @@
          <legend style="font-family: arial;">Faça sua compra</legend>
             <h1 style="color: red; font-family: arial black; float: left;"><?php echo "R$ $valor"; ?></h1>
        </div>
-         <div class="row" style="margin-top: 30px; height: 50px;">
+         <div class="row" style="margin-top: 30px; height: 50px; margin-bottom: 30px;">
           <button type="button" class="btn btn-success">Comprar</button>
           <button type="button" class="btn btn-success"><i class="fa fa-shopping-cart fa-2x" style="padding: 0 5px 0 0;" aria-hidden="true"></i></button>
-         </div>
-       </fieldset>
+        </div>
+    <?php 
+      echo "<select>";
+      for($p = 1;$p<=12;$p++){
+        $val = $valor2/$p;
+        $val = number_format($val, 2, ',','.');
+        echo "<option>$p x de R$ $val</option>";
+        if($p >= 10){
+          $valor2 = $valor2 * 1.05;
+        }
+      }
+      echo "</select>";
+    ?>
+  </div>
+  <a href="carrinho.php?idproduto=<?php echo $id; ?>">Adicionar ao carrinho</a>
+       </fieldset> 
+
      </div>
-   </div>
+
+       </div>
+
  </div>
+
+ 
+
+
+
+
  
  <?php
   include "rodape.php";

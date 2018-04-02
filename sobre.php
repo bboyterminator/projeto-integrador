@@ -1,3 +1,8 @@
+<?php
+
+  $admu = $_COOKIE['adm'];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

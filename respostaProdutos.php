@@ -9,4 +9,7 @@
 
 	$consulta = mysqli_query($con, $query);
 
+	include "upload.php";
+	echo "<h1>$titulo</h1><p>Categoria: $categoria</p>";
+
 ?>

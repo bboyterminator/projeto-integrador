@@ -34,7 +34,7 @@
             </div>
             <div class="row">
               <div class="col-lg-12">
-                <form id="login-form" action="respostaProdutos.php" method="post" role="form">
+                <form id="login-form" action="respostaProdutos.php" method="post" role="form" enctype="multipart/form-data">
                   <div class="form-group">
                     Título <input type="text" name="titulo" id="titulo" tabindex="1" class="form-control" placeholder="Ex:maria@gmail.com" value="">
                   </div>
@@ -45,7 +45,7 @@
                     Valor <input type="text" name="valor" id="valor" tabindex="2" class="form-control" placeholder="Insira o valor do produto">
                   </div>
                   <div class="form-group">
-                   <input type="file" name="foto" id="foto">
+                   <input type="file" name="arquivo" id="foto" accept="img/jpeg, img/png, img/jpg">
                   </div>
                        
            </fieldset>
